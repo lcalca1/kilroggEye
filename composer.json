@@ -1,0 +1,18 @@
+{
+    "name": "lca/kilroggEye",
+    "description": "lca/kilroggEye is a background system which function is recording image",
+    "require": 
+    {
+        "php": "~7.0",
+        "filp/whoops":"*",
+        "hassankhan/config":"~2.1.0",
+        "nikic/fast-route":"~1.3.0"
+    },
+    "authors": [
+        {
+            "name":"lca",
+            "email":"lcalca11@qq.com",
+            "role":"Developer"
+        }
+    ]
+}

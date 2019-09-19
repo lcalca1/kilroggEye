@@ -1,0 +1,8 @@
+# log
+logs
+
+# vendor
+vendor
+
+# bak
+*.bak
