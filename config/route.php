@@ -10,7 +10,7 @@ define("ROOT_URI", "/kilroggEye");
 
 $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r){
     $r->addGroup(ROOT_URI, function(FastRoute\RouteCollector $r){
-        $r->addRoute('GET', '/users', 'echoo');
+        $r->addRoute('GET', '/', 'indexPage');
         $r->addRoute('GET','/users/{id:\d+}', 'echoo');
     });
 });
