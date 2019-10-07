@@ -14,5 +14,11 @@
             "email":"lcalca11@qq.com",
             "role":"Developer"
         }
-    ]
+    ],
+    "autoload": {
+        "classmap":[
+            "app/controllers",
+            "app/models"
+        ]
+    }
 }
