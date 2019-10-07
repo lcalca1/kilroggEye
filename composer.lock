@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9ba99f66135c41b5a2162320756d8e41",
+    "content-hash": "accca9ebc902147e64bb020eb2fae44f",
     "packages": [
         {
             "name": "filp/whoops",
@@ -217,6 +217,47 @@
                 "psr-3"
             ],
             "time": "2018-11-20T15:27:04+00:00"
+        },
+        {
+            "name": "verot/class.upload.php",
+            "version": "2.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/verot/class.upload.php.git",
+                "reference": "6eebd581e92021d15ce113424297fe2d4544bcd5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/verot/class.upload.php/zipball/6eebd581e92021d15ce113424297fe2d4544bcd5",
+                "reference": "6eebd581e92021d15ce113424297fe2d4544bcd5",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/class.upload.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-only"
+            ],
+            "authors": [
+                {
+                    "name": "Colin Verot",
+                    "email": "colin@verot.net"
+                }
+            ],
+            "description": "This PHP class uploads files and manipulates images very easily.",
+            "homepage": "http://www.verot.net/php_class_upload.htm",
+            "keywords": [
+                "gd",
+                "upload"
+            ],
+            "time": "2019-08-08T19:39:41+00:00"
         }
     ],
     "packages-dev": [],
