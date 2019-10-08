@@ -6,3 +6,6 @@ vendor
 
 # bak
 *.bak
+
+# passwd
+config/users.php

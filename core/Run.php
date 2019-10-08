@@ -21,13 +21,14 @@ class Run {
      * @param
      * @return
      */
-    public function run() {
+    public function run(): \Sabre\HTTP\Response {
         $controllerName = $this->_routeInfo[2]['controller'];
         $controllerName = "\\" . (empty($controllerName) ? "Home" : $controllerName) . "Controller";
         $indexFuncName = $this->_routeInfo[1];
 
         unset($this->_routeInfo[2]['controller']);
+        #var_dump($this->_routeInfo);
 
-        call_user_func(array($controllerName, $indexFuncName), $this->_routeInfo[2]);
+        return call_user_func(array($controllerName, $indexFuncName), $this->_routeInfo[2]);
     }    
 }

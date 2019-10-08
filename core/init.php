@@ -13,6 +13,7 @@ require_once ROOT_PATH . '/config/route.php';
 require_once ROOT_PATH . '/core/lib/Route.php';
 require_once ROOT_PATH . '/config/const.php';
 
+use Sabre\HTTP;
 use \core\lib\AutoLoad;
 use \core\lib\Config;
 use \core\Run;
@@ -31,6 +32,8 @@ $routeInfo = $route->dispatch();
 
 // 核心入口
 $run = new Run($routeInfo);
-$run->run();
+$response = $run->run();
 
+// 输出生成内容
+HTTP\Sapi::sendResponse($response);
 ?>
