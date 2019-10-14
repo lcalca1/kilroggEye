@@ -10,6 +10,7 @@ class Route {
     protected $httpMethod;
     protected $uri;
     private $_dispatcher;
+    public $REQUEST;
 
     const ALLOWED_METHOD = ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'HEAD', 'OPTIONS'];
 
@@ -22,18 +23,24 @@ class Route {
     }
 
     public function __construct(FastRoute\Dispatcher\GroupCountBased $dispatcher) {
+        // 请求对象
+        $this->REQUEST = $GLOBALS['REQUEST'];
+
+        // 路由
         $this->_dispatcher = $dispatcher;
-        $this->construct($_SERVER['REQUEST_METHOD'], $_SERVER['REQUEST_URI']);
+
+        // 格式化 uri
+        $this->formatUri($this->REQUEST->getMethod(), $this->REQUEST->getUrl());
     }
 
     /**
-     * @brief 获取访问的方法和路径
+     * @brief 格式化访问的方法和路径
      * @param httpMethod, string 方法，支持类型见 ALLOWED_METHOD
      * @param uri, string 访问路径
      * @return 
      */
-    protected function construct(string $httpMethod, string $uri){
-        if (false !== $pos = strpos($uri, '?')) {
+    protected function formatUri(string $httpMethod, string $uri){
+        if (false !== $pos = strpos($uri, '?')) { // 去掉参数 RESTful uri
             $uri = substr($uri, 0, $pos);
         }
 

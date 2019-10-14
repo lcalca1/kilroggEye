@@ -26,6 +26,9 @@ $conf = Config::getConfig('conf');
 // 定义环境名称
 define("ENV", $conf->get('env', TEST));
 
+// 获取请求对象
+$REQUEST = HTTP\Sapi::getRequest();
+
 // 路由解析
 $route = new Route($dispatcher);
 $routeInfo = $route->dispatch();
