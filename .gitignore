@@ -8,4 +8,4 @@ vendor
 *.bak
 
 # passwd
-config/users.php
+config/users.json

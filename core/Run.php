@@ -27,8 +27,8 @@ class Run {
         $indexFuncName = $this->_routeInfo[1];
 
         unset($this->_routeInfo[2]['controller']);
-        #var_dump($this->_routeInfo);
 
-        return call_user_func(array($controllerName, $indexFuncName), $this->_routeInfo[2]);
+        $controller = new $controllerName();
+        return call_user_func(array($controller, $indexFuncName), $this->_routeInfo[2]);
     }    
 }

@@ -9,7 +9,23 @@ use Sabre\HTTP;
 
 class BaseController
 {
-    public function __construct() {}    
+    private $_request;
+    private $_response;
+
+    public function __construct() {
+        $this->_request = HTTP\Sapi::getRequest();
+        $this->_response = new HTTP\Response();
+    }
+
+    public function getRequest()
+    {
+        return $this->_request;
+    }
+
+    public function getResponse()
+    {
+        return $this->_response;
+    }
 
     /**
      *
