@@ -29,6 +29,7 @@ class Run {
         unset($this->_routeInfo[2]['controller']);
 
         $controller = new $controllerName();
+
         return call_user_func(array($controller, $indexFuncName), $this->_routeInfo[2]);
     }    
 }

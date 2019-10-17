@@ -12,7 +12,6 @@ class AutoLoad {
         $file = ROOT_PATH . "/" . $class  . ".php";
         // Linux 需要转义斜杠
         $file = str_replace('\\', '/', $file);
-        #echo $file . "<br/>";
 
         if (is_file($file)) {
             include($file);
