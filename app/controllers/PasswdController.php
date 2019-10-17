@@ -42,8 +42,7 @@ class PasswdController extends BaseController
      * @param $response
      * @return bool
      */
-    public function isLogin(HTTP\Request $request, HTTP\Response $response) : bool
-    {
+    public function isLogin(HTTP\Request $request, HTTP\Response $response) : bool {
         // get users
         $user_conf = Config::getConfig('users');
         $userList = $user_conf->all();
