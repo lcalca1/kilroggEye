@@ -22,6 +22,16 @@ class PasswdController extends BaseController
      * @return HTTP\Response 
      */
     public function login() : HTTP\Response {
+        $body = 'You are logged in!';
+        return $this->_login($body);
+    }
+
+    /**
+     * @brief  _login
+     * @param $body, string http response body
+     * @return HTTP\Response 
+     */
+    public function _login(string $body) : HTTP\Response {
         // request & response
         $request = $this->getRequest();
         $response = $this->getResponse();
@@ -29,12 +39,11 @@ class PasswdController extends BaseController
         // Login
         if ($this->isLogin($request, $response)) {
             $response->setStatus(HTTP_STATUS_OK);
-            $response->setBody('You are logged in!');
+            $response->setBody($body);
         }
 
         return $response;
     }
-
 
     /**
      * @brief login or not
