@@ -21,7 +21,7 @@ class PasswdController extends BaseController
      * @param
      * @return HTTP\Response 
      */
-    private function login() : HTTP\Response {
+    public function login() : HTTP\Response {
         // request & response
         $request = $this->getRequest();
         $response = $this->getResponse();
