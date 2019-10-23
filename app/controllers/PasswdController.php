@@ -57,7 +57,7 @@ class PasswdController extends BaseController
         $userList = $user_conf->all();
 
         // Auth
-        $digestAuth = new HTTP\Auth\Digest('Locked down', $request, $response);
+        $digestAuth = new HTTP\Auth\Digest($request->getHeaders()["Host"][0], $request, $response);
         $digestAuth->init();
 
         if (!$userName = $digestAuth->getUsername()) { // No username given
