@@ -10,10 +10,15 @@ define("ROOT_URI", "/kilroggEye");
 
 $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r){
     $r->addGroup(ROOT_URI, function(FastRoute\RouteCollector $r){
+        // home
         $r->addRoute('GET', '/{controller:}', 'home');
-        $r->addRoute('GET','/{controller:Home}', 'home');
-        $r->addRoute('GET','/{controller:Passwd}', 'run');
+        $r->addRoute('GET', '/{controller:Home}', 'home');
 
-        $r->addRoute('GET','/users/{id:\d+}', 'echoo');
+        // password
+        $r->addRoute('GET', '/{controller:Passwd}', 'run');
+
+        // img upload
+        $r->addRoute('POST', '/{controller:ImgUpload}', 'run');
+
     });
 });

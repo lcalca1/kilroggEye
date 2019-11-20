@@ -18,6 +18,9 @@ use \core\lib\AutoLoad;
 use \core\lib\Config;
 use \core\Run;
 
+// 设置时区
+date_default_timezone_set("PRC");
+
 // 自动加载
 spl_autoload_register([new AutoLoad(), 'AutoLoad']);
 

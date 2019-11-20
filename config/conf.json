@@ -1,5 +1,12 @@
 {
     "env":"test",
     "controller" : "Index",
-    "action":"run"
+    "action":"run",
+    "imgPath":"/resource/img",
+
+    "cookieDomain":"lcalca.date",
+    "host":"www.lcalca.date",
+
+    "can_only_be_used_after": 0,
+    "expires": 3600
 }
